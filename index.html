@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anton Schoo — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <aside class="sidebar">
+            <div class="sidebar-name">Anton Schoo</div>
+            <div class="sidebar-role">Techniker Maschinentechnik<br>angehender Technischer Betriebswirt</div>
+
+            <nav class="sidebar-nav">
+                <a href="#projekte">Projekte</a>
+                <a href="#skills">Fähigkeiten</a>
+                <a href="#kontakt">Kontakt</a>
+            </nav>c
+
+            <div class="sidebar-contact" id="kontakt">
+
+                <a href="mailto:anton.schoo@aol.com">anton.schoo@aol.com</a>
+                <a href="tel:01728348438">0172 8348438</a>
+            </div>
+        </aside>
+
+        <main>
+            <div class="intro-block">
+                <div class="eyebrow">Portfolio</div>
+                <h1>
+                    Ich war schon als Fräser neugierig, wie Dinge funktionieren und diese Neugier hat mich nie wirklich losgelassen. Über den Techniker und jetzt den angehenden Betriebswirt bin ich zwar den "offiziellen" Weg gegangen, aber nebenbei hab ich eigentlich immer
+                    irgendwas gebaut: mit Arduino, mit KI-Tools, mit allem, was gerade greifbar war. Meistens, weil ich einfach wissen wollte, ob eine Idee funktioniert und nicht, weil's jemand von mir verlangt hat.
+                </h1>
+            </div>
+
+            <section id="projekte">
+                <div class="section-title">Ausgewählte Projekte</div>
+
+                <!-- PROJEKT 1: NFC-Tracking -->
+                <div class="project">
+                    <div class="project-index">01</div>
+                    <h3>NFC-Tracking für Fertigungsaufträge</h3>
+                    <p>
+                        In vielen Fertigungsbetrieben laufen Aufträge noch papierbasiert, der Meister muss selbst in die Fertigung laufen, um zu sehen, wo ein Auftrag gerade steht. Ich habe ein System aus Arduino und NFC-Reader gebaut, bei dem einfach ein NFC-Tag auf den bestehenden
+                        Auftragszettel geklebt wird. Für die Mitarbeiter ändert sich nichts am Ablauf, die Zettel werden wie gewohnt in die vorgesehenen Ablagen gelegt. Ein Reader an jeder Station erkennt automatisch, wo sich welcher Auftrag befindet
+                        und wie lange er dort ist. Der Meister sieht das live auf einem Dashboard, ohne selbst nachschauen zu müssen. Dieses Projekt ist aus einem eigenen Problem entstanden, das ich während meiner Arbeit als Zerspanungsmechaniker erkannt
+                        habe.
+                    </p>
+
+                    <div class="media-wrap">
+                        <div class="media-block">
+                            <video controls preload="metadata" poster="images/nfc-tracking/hardware-aufbau.jpg">
+              <source src="images/nfc-tracking/demo.mp4" type="video/mp4">
+            </video>
+                        </div>
+                        <div class="caption">Funktionstest: Arduino liest NFC-Tag, LED bestätigt Erkennung</div>
+                    </div>
+
+                    <div class="media-grid">
+                        <div class="media-block"><img src="images/nfc-tracking/hardware-aufbau.jpg" alt="Hardware-Aufbau mit Arduino und RFID-Modul"></div>
+                        <div class="media-block"><img src="images/nfc-tracking/dashboard-neuer-auftrag.png" alt="Dialog zum Anlegen eines neuen Auftrags"></div>
+                    </div>
+                    <div class="caption-grid">
+                        <div class="caption">Prototyp: Arduino Uno mit RFID-RC522-Reader auf Breadboard</div>
+                        <div class="caption">Neuer Auftrag wird angelegt, NFC-Tag wird gescannt und zugeordnet</div>
+                    </div>
+
+                    <div class="media-grid" style="margin-top:22px;">
+                        <div class="media-block"><img src="images/nfc-tracking/dashboard-meister.png" alt="Meister-Dashboard mit Auftragsübersicht"></div>
+                        <div class="media-block"><img src="images/nfc-tracking/dashboard-auswertung.png" alt="Auswertungsseite mit Durchlaufzeiten"></div>
+                    </div>
+                    <div class="caption-grid">
+                        <div class="caption">Live-Übersicht: offene, laufende und fertige Aufträge auf einen Blick</div>
+                        <div class="caption">Auswertung: Durchlaufzeiten, schnellster und langsamster Auftrag, an welcher Station befindet sich welcher Auftrag</div>
+                    </div>
+
+                    <div class="tags">
+                        <span class="tag">Arduino</span>
+                        <span class="tag">NFC / RFID</span>
+                        <span class="tag">Dashboard</span>
+                        <span class="tag">Fertigungsprozesse</span>
+                    </div>
+                </div>
+
+                <!-- PROJEKT 2: Vision-Pause -->
+                <div class="project">
+                    <div class="project-index">02</div>
+                    <h3>Bildschirmpausen-Erkennung per Computer Vision</h3>
+                    <p>
+                        Eine Webapp, die anhand eines trainierten Python-Modells Veränderungen an den Augen bei Bildschirmnutzung erkennen und den Nutzer rechtzeitig auf eine Pause hinweisen sollte. Eine gute Lernerfahrung darüber, wie Machine-Learning-Projekte in der Praxis
+                        angewendet werden können.
+                    </p>
+                    <div class="media-grid">
+                        <div class="media-block"><img src="images/vision-pause/status-gruen.jpg" alt="Status grün: Augen im Normalbereich"></div>
+                        <div class="media-block"><img src="images/vision-pause/status-rot.jpg" alt="Status rot: erhöhte Rötung erkannt, Pause empfohlen"></div>
+                    </div>
+                    <div class="caption-grid">
+                        <div class="caption">Normalzustand erkannt — Öffnung und Rötung im Referenzbereich</div>
+                        <div class="caption">Abweichung erkannt — Rötung deutlich über Referenzwert</div>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Computer Vision</span>
+                    </div>
+                </div>
+
+                <!-- PROJEKT 3: App Mutig -->
+                <div class="project">
+                    <div class="project-index">03</div>
+                    <h3>App "Mutig"</h3>
+                    <p>
+                        Eine App, die verpasste Momente wieder erkennbar macht, komplett mit KI-Unterstützung (Claude) und VS Code gebaut, inklusive Backend-Anbindung über Firebase. Als funktionierendes MVP auf meinem Android-Smartphone getestet. Beeindruckend für mich selbst,
+                        wie moderne KI-Tools unterstützen, um eigene Ideen schnell in echte Software umzusetzen. Von Registration / Login, bis hin zu Postings und Nachrichten.
+                    </p>
+                    <div class="media-grid cols-3">
+                        <div class="media-block"><img src="images/app-mutig/splash.png" alt="Startbildschirm der App Mutig"></div>
+                        <div class="media-block"><img src="images/app-mutig/moment-card.png" alt="Ein geteilter Moment in der App"></div>
+                        <div class="media-block"><img src="images/app-mutig/karte.jpg" alt="Kartenansicht mit Momenten in der Nähe"></div>
+                    </div>
+                    <div class="caption-grid cols-3">
+                        <div class="caption">Startbildschirm</div>
+                        <div class="caption">Ein geteilter Moment</div>
+                        <div class="caption">Momente in der Nähe</div>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">KI-gestützte Entwicklung</span>
+                        <span class="tag">Firebase</span>
+                        <span class="tag">App-Entwicklung</span>
+                    </div>
+                </div>
+
+                <!-- PROJEKT 4: TouchClean -->
+                <div class="project">
+                    <div class="project-index">04</div>
+                    <h3>TouchClean</h3>
+                    <p>
+                        Ein Gerät zur Desinfektion von Smartphones an öffentlichen Orten wie Gastro oder Toiletten. Entstanden als Projekt während meiner Techniker-Weiterbildung. Die Grundidee kam von mir, umgesetzt haben wir sie zu viert, begleitet von einer Lehrkraft, von
+                        der Konzeptphase bis zur Entwicklung. Angewandt haben wir dabei bewährte Methoden aus der Techniker-Ausbildung, von der Konzeptbewertung bis zur 3D-Konstruktion.
+                    </p>
+                    <div class="media-grid">
+                        <div class="media-block"><img src="images/touchclean/konzept-01.jpg" alt="TouchClean Konzept-Rendering, Einschub für Smartphone"></div>
+                        <div class="media-block"><img src="images/touchclean/konzept-02.jpg" alt="TouchClean Standgerät für den öffentlichen Einsatz"></div>
+                    </div>
+                    <div class="caption-grid">
+                        <div class="caption">Einschubmodul: Smartphone wird seitlich eingeführt und desinfiziert</div>
+                        <div class="caption">Standgerät-Variante für Gastro und öffentliche Toiletten</div>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">Produktentwicklung</span>
+                        <span class="tag">Konzeption</span>
+                        <span class="tag">Teamarbeit</span>
+                    </div>
+                </div>
+
+                <!-- PROJEKT 5: Rheinmetall -->
+                <div class="project">
+                    <div class="project-index">05</div>
+                    <h3>Optimierung der Hydraulik-Montage bei Rheinmetall</h3>
+                    <p>
+                        Mein Techniker-Abschlussprojekt: Analyse des bestehenden Montageprozesses von Hydraulikkomponenten bei Rheinmetall. Ziel war es, den Ist-Prozess systematisch zu untersuchen, Schwachstellen und Zeitverluste zu identifizieren und darauf aufbauend ein konkretes
+                        Optimierungskonzept zu entwickeln. Angewandt haben wir dabei bewährte Methoden und Techniken, die uns während der Techniker-Weiterbildung vermittelt wurden.
+                    </p>
+                    <div class="note-box">
+                        Aus Datenschutz- und Vertraulichkeitsgründen kann ich hier keine Bilder oder Auszüge aus der Arbeit zeigen — Details gerne im persönlichen Gespräch.
+                    </div>
+                    <p>
+                        Das Projekt hat gezeigt, wie ich technisches Prozessverständnis mit wirtschaftlicher Bewertung verbinde.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Prozessanalyse</span>
+                        <span class="tag">Montageoptimierung</span>
+                        <span class="tag">Lean Management</span>
+                        <span class="tag">Rheinmetall</span>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="skills" id="skills">
+                <div class="section-title">Weitere Tools &amp; Fähigkeiten</div>
+                <div class="skills-list">
+                    <span>Autodesk Fusion 360</span>
+                    <span>Autodesk Inventor</span>
+                    <span>3D-Druck</span>
+                    <span>Figma</span>
+                    <span>WordPress</span>
+                    <span>Make (Automatisierung / Chatbots)</span>
+                    <span>CATIA</span>
+                    <span>SAP</span>
+                    <span>RT ToolBox3 (SPS-Steuerung)</span>
+                </div>
+                <p style="font-size:13px; color:var(--muted); margin-top:16px; max-width:60ch;">
+                    Manche Tools kenne ich aus Ausbildung, Job oder Weiterbildung, andere hab ich mir selbst beigebracht.
+                </p>
+            </section>
+
+            <footer>
+                Zuletzt aktualisiert — 2026
+            </footer>
+        </main>
+
+    </div>
+
+</body>
+
+</html>
